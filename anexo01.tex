@@ -1,0 +1,47 @@
+	\section{ANEXO A - SCRIPIT em R}
+\begin{verbatim}
+#quantidades
+itens <- 20
+alunos <- 20
+teste <- 50
+
+ais <- runif(itens,1,2)
+bis <- rnorm(itens,0,1)
+cis <- rnorm(itens,0.2,0.075)
+
+prob <- function(D,hab,a,b,c){
+  retrurn <- c + (1 - c)/(1 + exp(-D*a*(hab - b)))
+}
+
+habilidades <- rnorm(alunos,0,1)
+
+quant = itens * alunos
+for(k in 1:teste){
+  x <- matrix(data = rep(1,quant),ncol=itens,nrow=alunos)
+  for(i in 1:itens){
+    for(j in 1:alunos){
+      ran = runif(1)
+      ii = (i - 1)*alunos + j
+      if(ran < prob(1.7,habilidades[j],ais[i],bis[i],cis[i])){
+        x[ii] = 0
+      }else{
+        x[ii] = 1
+      }
+    }
+  }
+  m_s <- paste("matrix",toString(k),".csv",sep="")
+  write.csv(x, m_s ,row.names = FALSE)
+}
+
+ais_source <- "ais.csv"
+bis_source <- "bis.csv"
+cis_source <- "cis.csv"
+hab_source <- "habilidades.csv"
+
+write.table(ais,ais_source, row.names = FALSE, col.names=FALSE)
+write.table(bis,bis_source, row.names = FALSE, col.names=FALSE)
+write.table(cis,cis_source, row.names = FALSE, col.names=FALSE)
+write.table(habilidades,hab_source, row.names = FALSE, col.names=FALSE)
+
+
+\end{verbatim}

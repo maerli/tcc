@@ -1,0 +1,117 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[brazil]{babel}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage{anysize}
+\usepackage{pslatex} %fonte times new roman
+\usepackage{titlesec}
+\usepackage[a4paper,left=3cm,right=2cm,top=3cm]{geometry}
+\onehalfspacing
+%\usepackage[alf]{abntex2cite}
+\usepackage{fancyhdr}
+%\fancyhf{}
+\fancyfoot{}
+%\lhead{}
+\rhead{\thepage}
+\rfoot{}
+
+
+%tirar cabeçalho
+\fancypagestyle{nohead}{
+    \fancyhead{}
+    \fancyfoot{}
+    %\lhead{\theauthor}
+    \rhead{\thepage}
+    \rfoot{}
+    \renewcommand{\headrulewidth}{0pt}
+}
+%tirar page
+\fancypagestyle{nopagenumber}{
+    %\lhead{\theauthor}
+    \rhead{}
+    \rfoot{}
+    \renewcommand{\headrulewidth}{0pt}
+}
+
+\usepackage[style=abnt]{biblatex}
+\addbibresource{bibliografia.bib}        % Seus arquivos de
+%\addbibresource{outroarquivo.bib}
+
+%\usepackage{fontspec}
+%\setmainfont[
+%BoldFont=arialbd.ttf,
+%ItalicFont=ariali.ttf,
+%BoldItalicFont=arialbi.ttf
+%]{arial.ttf}
+
+
+\usepackage{tocloft}
+\renewcommand{\cftfigfont}{Figura }
+
+\renewcommand{\headrulewidth}{1pt}
+\begin{document}
+	
+	%capa
+     \input{capa.tex}
+		\setcounter{page}{1}
+		
+	%folha de rosto
+	   \input{folha_de_rosto.tex}
+	%folha de aprovação
+	     \input{folha_de_aprovacao.tex}
+
+	%dedicatoria
+	\begin{center}
+	    \textbf{DEDICATÓRIA}
+	\end{center}
+	
+	\newpage
+	%AGRADECIMENTOS
+	    \input{agradecimentos.tex}
+	\thispagestyle{empty}
+	%resumo
+	    \input{resumo.tex}
+	    
+	%abstract
+	    \input{abstract.tex}
+	%\thispagestyle{nopagenumber}
+	\renewcommand{\listfigurename}{\hfill LISTA DE ILUSTRAÇÕES\hfill}
+	\listoffigures
+
+	\newpage
+	\thispagestyle{empty}
+	\renewcommand{\contentsname}{\hspace{0.4\linewidth}SUMÁRIO}
+	\tableofcontents
+    
+    \newpage
+    
+    \pagestyle{fancy}
+	%introducao
+	    \input{section01.tex}
+	
+	%secao  - teoria de resposta ao item
+	    \input{section02.tex}
+	%secao - estimcao
+	    \input{section03.tex}
+	%secao - aplicacao TRI
+	    \input{section04.tex}
+	%secao - conclusao
+	     \input{section05.tex}
+	\pagestyle{nohead}
+	\renewcommand{\refname}{\hfill REFERÊNCIAS \hfill}
+	
+	
+	\setcounter{section}{7}
+	\addcontentsline{toc}{section}{\thesection \hspace{0.3cm} REFERÊNCIAS}
+	\medskip
+	%\bibliographystyle{abnt-alf}%Used BibTeX style is unsrt
+    %\bibliography{bibliografia}
+    
+    \printbibliography
+    % ler https://repositorio.ufsc.br/bitstream/handle/123456789/95506/299657.pdf
+	\newpage
+   %anexo A
+       \input{anexo01.tex}
+\end{document}
