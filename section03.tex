@@ -6,8 +6,8 @@
 	    Assim estimar os parâmetros dos itens tem como significado encontrar os valores dos parâmetros da função características do item que se ajustem aos dados, ou seja, encontrar os valores dos parâmetros a,b e c e $\theta$.
 	\begin{figure}[!h]
 	    \centering
-	    \includegraphics[width=0.6\linewidth]{img/proporcao}
 	    \caption{Proporção de respostas corretas dada a um item}
+	    \includegraphics[width=0.6\linewidth]{img/proporcao}
 	    \label{fig:proporcao}
 	\end{figure}
 	
@@ -31,8 +31,7 @@
     \paragraph{}
 	    Em outras palavras, tendo-se um conjunto de dados e um modelo estatístico, o método de máxima verossimilhança estima os valores dos diferentes parâmetros do modelo estatístico de maneira a maximizar a probabilidade dos dados observados (isto é, busca parâmetros que maximizem a função de verossimilhança). O método de máxima verossimilhança apresenta-se como um método geral para estimação de parâmetros, principalmente no caso de distribuições normais. Assim para encontrarmos o valor dos dados que maximizam a função de MV, precisamos derivar a função de MV e encontrar o valor que são raízes desta função derivada.
 	\subsection{Estimação para uma única população}
-	\cite{George} 
-    	Considerando no caso de N indivíduos, $1 < j < N$, respondendo a I itens, $1 < i < I$, onde cada resposta é: $U_{ji} = 1$ como correta ou $U_{ji} = 0$ incorreta . Utilizando o MVM podemos estimar os parâmetros dos itens no modelo logístico de 3 parâmetros, temos as seguintes definições:
+    	Considerando no caso de N indivíduos, $1 < j < N$, respondendo a I itens, $1 < i < I$, onde cada resposta é: $U_{ji} = 1$ como correta ou $U_{ji} = 0$ incorreta \cite{George} . Utilizando o MVM podemos estimar os parâmetros dos itens no modelo logístico de 3 parâmetros, temos as seguintes definições:
 	\paragraph{}
 	\begin{table}[!h]
 	    \centering
@@ -287,7 +286,6 @@
 	\begin{equation}
 	\log L(\theta) = \displaystyle\sum\limits_{j = 1}^{n}\displaystyle\sum\limits_{i = 1}^{I}\{u_{ji}\log P_{ji} + (1 - u_{ji}) \log Q_{ji}\}
     \end{equation}
-	\newpage
 	\subsection{Outras metodologias de estimação}
 	\paragraph{}
 	    Pode-se ainda escolher outros metodos para obenção dos parametro dos itens.Tavares, mostra alguns ressaltando suas pontos positivos e negativos:\\
@@ -319,7 +317,7 @@
 	\paragraph{}
 	    Diferentemente da medida escore em um teste com I questões do tipo
 	    certo/errado, que assume valores inteiros entre 0 e I, na TRI a habilidade pode
-	    teoricamente assumir qualquer valor real entre $+\displaystyle\infty$ e $-\displaystyle\infty$. Assim, precisa-se estabelecer uma origem e uma unidade de medida para a definição da escala. Esses valores são escolhidos de modo a representar, respectivamente, o valor médio($\mu$) e o desvio-padrão($\sigma$) das habilidades dos indivíduos da população em estudo. Para os gráficos mostrados anteriormente, utilizou-se a escala com média igual a 0 e desvio-padrão igual a 1 que é utilizado para distribuições normais, que será representada por escala (0,1). Essa escala é bastante utilizada pela TRI, e nesse caso, os valores do parâmetro b variam (tipicamente) entre $-2$ e $+2$. Com relação ao parâmetro $a$, espera-se valores entre $0$ e $+2$, sendo que os valores mais apropriados de $a$ seriam aqueles maiores do que 1. Apesar da frequente utilização da escala (0,1), em termos práticos, não faz a menor diferença estabelecer-se estes valores ou outros quaisquer. O importante são as relações de ordem existentes entre seus pontos. Por exemplo, na escala (0,1) um indivíduo com habilidade 1,20 está 1,20 desvios-padrão acima da habilidade média. Este mesmo indivíduo teria a habilidade 248, e consequentemente estaria também 1,20 desvios-padrão acima da habilidade média, se a escala utilizada para esta população fosse a escala(200;40). Isto pode ser visto a partir da transformação de escala:
+	    teoricamente assumir qualquer valor real entre $+\displaystyle\infty$ e $-\displaystyle\infty$. Dessa forma, precisa-se limitar a escala definindo uma origem e uma unidade de medida para a definição da escala. Esses valores são escolhidos de modo a representar, respectivamente, o valor médio($\mu$) e o desvio-padrão($\sigma$) das habilidades dos indivíduos da população em estudo. Para os gráficos mostrados anteriormente, utilizou-se a escala com média igual a 0 e desvio-padrão igual a 1 que é utilizado para distribuições normais, que será representada por escala (0,1). Essa escala é bastante utilizada pela TRI, e nesse caso, os valores do parâmetro b variam entre $-2$ e $+2$. Com relação ao parâmetro $a$, espera-se valores entre $0$ e $+2$, sendo que os valores mais apropriados de $a$ seriam aqueles maiores do que 1. Apesar da frequente utilização da escala (0,1), em termos práticos, não faz a menor diferença estabelecer-se estes valores ou outros quaisquer. O importante são as relações de ordem existentes entre seus pontos. Por exemplo, na escala (0,1) um indivíduo com habilidade 1,20 está 1,20 desvios-padrão acima da habilidade média. Este mesmo indivíduo teria a habilidade 248, e consequentemente estaria também 1,20 desvios-padrão acima da habilidade média, se a escala utilizada para esta população fosse a escala(200;40). Isto pode ser visto a partir da transformação de escala:
 	\begin{eqnarray}
 		1.\theta^* & = & \sigma \times \theta + u\\
 		2 .b^* & = & \sigma \times b + u\\
@@ -348,7 +346,7 @@
 	\end{eqnarray}
 	\subsection{Interpretação escala de habilidade}
 	\paragraph{}
-	    Uma vez que todos os parâmetros dos itens e que todas as habilidades dos respondentes — tanto individuais como populacionais — de todos os grupos avaliados estão numa mesma métrica, ou seja, quando todos os parâmetros envolvidos são comparáveis, pode-se então construir escalas de conhecimento interpretáveis.
+	    Visto que os parâmetros dos itens e que todas as habilidades dos respondentes, tanto individuais como populacionais, de todos os grupos avaliados estão numa mesma métrica, ou seja, quando todos os parâmetros envolvidos são comparáveis, pode-se então construir escalas de conhecimento interpretáveis.
 	\paragraph{}
 	    Definição de item âncora: Considere dois níveis âncora consecutivos Y e Z com Y $<$ Z. Dizemos que um determinado item é ancora para o nível Z se e somente se 3 condições abaixo forem satisfeitas simultaneamente: 
 	
@@ -358,8 +356,7 @@
 		P(U = 1 | \theta = Z) - P(U = 1 | \theta = Y) & < & 0,30
 	\end{eqnarray}
 	\paragraph{}
-	    Em outras palavras, para um item ser âncora em um determinado nível âncora da escala, ele precisa ser respondido corretamente por uma grande 	proporção de indivíduos (pelo menos $65\%$) com este nível de habilidade e por uma proporção menor de indivíduos (no máximo $50\%$) com o nível de habilidade imediatamente anterior. Além disso, a diferença entre a proporção de indivíduos com esses níveis de habilidade que acertam a esse item deve ser de pelo menos $30\%$.
+	    Definição segundo \textcite{Dalton}, em outras palavras, para um item ser âncora em um determinado nível âncora da escala, ele precisa ser respondido corretamente por uma grande 	proporção de indivíduos (pelo menos $65\%$) com este nível de habilidade e por uma proporção menor de indivíduos (no máximo $50\%$) com o nível de habilidade imediatamente anterior. Além disso, a diferença entre a proporção de indivíduos com esses níveis de habilidade que acertam a esse item deve ser de pelo menos $30\%$. 
 	
-	avaliação\cite{Francisco}
 	%https://ppgmat.ufersa.edu.br/wp-content/uploads/sites/58/2016/02/Disserta%C3%A7%C3%A3o-Francisco-Edmilson.pdf
 	\newpage
